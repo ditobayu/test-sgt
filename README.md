@@ -2,6 +2,10 @@
 
 A recreation of the [TR Scroll Toggle website](https://tr-scroll-toggle.webflow.io/) built with Vue.js 2, GSAP, and Lenis smooth scroll.
 
+## 🌐 Live Demo
+
+**[https://test-sgt.silomba.id/](https://test-sgt.silomba.id/)**
+
 ## 🚀 Technologies Used
 
 - **Vue.js 2** - Progressive JavaScript framework (Options API)
