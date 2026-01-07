@@ -32,17 +32,14 @@ A recreation of the [TR Scroll Toggle website](https://tr-scroll-toggle.webflow.
 src/
 ├── assets/
 │   ├── images/          # Image assets
-│   ├── fonts/           # Custom fonts
+│   ├── fonts/           # Custom fonts (Recife Display, Aeonik)
 │   └── styles/          # Global SASS styles
-│       └── global.scss
 ├── components/
-│   ├── Header.vue       # Navigation header
-│   ├── Section1.vue     # "The sitemap" section
-│   ├── Section2.vue     # "Paint walls" section
-│   ├── Section3.vue     # "Build it out" section
-│   └── Footer.vue       # Footer section
+│   ├── SliderSection.vue       # Main slider section with 3 stages (Plan, Design, Build)
+│   ├── InteractiveSection.vue  # Interactive section with image transitions
+│   └── ThankYouSection.vue     # Thank you section
 ├── pages/
-│   └── index.vue        # Main page with animations
+│   └── index.vue        # Main page with Lenis smooth scroll & GSAP integration
 └── App.vue              # Root component
 ```
 
@@ -178,26 +175,27 @@ The website is fully responsive using SASS media queries:
 
 ## 📝 Component Documentation
 
-### Header Component
+### SliderSection Component
 
-Fixed navigation header with:
-- Logo
-- Navigation links (Plan, Design, Build)
-- CTA button
-- Scroll-based background change
-- ScrollToPlugin integration
-
-### Section Components
-
-Each section includes:
+Main slider with three stages:
+- Plan, Design, Build sections
+- Horizontal progress bars
+- Image transitions with GSAP animations
+- ScrollTrigger pinning
 - Responsive grid layout
-- Fade-in content animations
-- Image hover effects
-- Section labels
 
-### Footer Component
+### InteractiveSection Component
 
-Simple thank you section with fade-in animation.
+Interactive section featuring:
+- Image sequence transitions
+- Progress bar tracking
+- Smooth scroll-based animations
+- Multiple image stages
+- Vertical progress indicator
+
+### ThankYouSection Component
+
+Simple closing section with centered "Thank you" text and brand styling.
 
 ## 🔧 Configuration
 
@@ -207,7 +205,7 @@ The project uses default Vue CLI configuration with SASS support.
 
 ### SASS Setup
 
-Global styles are located in `src/assets/styles/global.scss` and imported in the main page component.
+Styles are scoped within each component using SASS/SCSS with `<style lang="scss" scoped>`.
 
 ## 🌐 Browser Support
 
@@ -230,22 +228,7 @@ Global styles are located in `src/assets/styles/global.scss` and imported in the
 @media (max-width: 576px)
 ```
 
-## 🚀 Deployment
-
-This project can be deployed to:
-
-- **Vercel** - Recommended for Vue.js apps
-- **Netlify** - Easy static hosting
-- **GitHub Pages** - Free hosting option
-
-### Deploy to Vercel
-
-```bash
-npm install -g vercel
-vercel
-```
-
-## 👨‍💻 Development Notes
+## ‍💻 Development Notes
 
 - All components use Vue 2 Options API as required
 - GSAP animations are properly cleaned up in `beforeDestroy` hooks
