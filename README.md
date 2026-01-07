@@ -48,14 +48,17 @@ src/
 
 - Node.js (v14 or higher)
 - npm or yarn
+- Docker & Docker Compose (optional, for containerized setup)
 
-### Install Dependencies
+### Local Development (without Docker)
+
+#### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Development Server
+#### Development Server
 
 Run the development server:
 
@@ -65,17 +68,58 @@ npm run serve
 
 The app will be available at `http://localhost:8080`
 
-### Build for Production
+#### Build for Production
 
 ```bash
 npm run build
 ```
 
-### Lint & Fix Files
+#### Lint & Fix Files
 
 ```bash
 npm run lint
 ```
+
+### Docker Setup
+
+The project includes Docker configuration for both development and production environments.
+
+#### Development with Docker
+
+Run development server with hot-reload:
+
+```bash
+# Start dev server (auto-installs dependencies)
+docker-compose -f docker-compose.dev.yml up
+
+# Stop server
+docker-compose -f docker-compose.dev.yml down
+```
+
+The app will be available at `http://localhost:8080` with:
+- ✅ Hot-reload enabled
+- ✅ Volume mounting for instant code changes
+- ✅ Auto dependency installation
+
+#### Production with Docker
+
+Build and run production version:
+
+```bash
+# Build and start production container
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop production container
+docker-compose down
+```
+
+Production build uses:
+- Multi-stage Docker build (Node.js build + Nginx serve)
+- Optimized static assets
+- Nginx configuration for optimal performance
 
 ## 🎨 Key Implementation Details
 
