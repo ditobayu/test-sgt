@@ -1,0 +1,17 @@
+services:
+  vue-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-sgt-app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true
