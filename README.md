@@ -1,6 +1,6 @@
 # TR Scroll Toggle - Vue.js Recreation
 
-A pixel-perfect recreation of the [TR Scroll Toggle website](https://tr-scroll-toggle.webflow.io/) built with Vue.js 2, GSAP, and Lenis smooth scroll.
+A recreation of the [TR Scroll Toggle website](https://tr-scroll-toggle.webflow.io/) built with Vue.js 2, GSAP, and Lenis smooth scroll.
 
 ## 🚀 Technologies Used
 
